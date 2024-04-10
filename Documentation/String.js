@@ -226,5 +226,3 @@ const b = 'a'
 // console.log(c)
 // // Output : null // as no number is present 
 
-
-
