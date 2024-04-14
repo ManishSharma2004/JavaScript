@@ -144,6 +144,7 @@ const str2="Sharma"
 // Output : True  // Here position index starts with 0
 
 
+
 // 10. indexOf()
 
 // This method is used to search strings , and return their indes values
@@ -226,3 +227,61 @@ const b = 'a'
 // console.log(c)
 // // Output : null // as no number is present 
 
+
+// 13. matchAll()
+
+// The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
+
+// Syntax : matchAll(regexp)
+
+// A regular expression object, or any object that has a Symbol.matchAll method. If regexp is not a RegExp object and does not have a Symbol.matchAll method, it is implicitly converted to a RegExp by using new RegExp(regexp, 'g'). If regexp is a regex, then it must have the global (g) flag set, or a TypeError is thrown
+
+
+// It returns An iterable iterator object (which is not restartable) of matches or an empty iterator if no matches are found. Each value yielded by the iterator is an array with the same shape as the return value of RegExp.prototype.exec().
+
+
+// Code:-
+
+// const regexp = "t" ;
+// const str = 'test1test2';
+
+// const array = [...str.matchAll(regexp)];
+
+// console.log(array[0]);
+// // output: [ '1', index: 4, input: 'test1test2', groups: undefined ]
+
+// console.log(array[1]);
+// // Output : [ 't', index: 3, input: 'test1test2', groups: undefined ]
+// console.log(array[2]);
+// // output : [ 't', index: 8, input: 'test1test2', groups: undefined ] 
+// console.log(array[3]);
+// // Output : [ 't', index: 5, input: 'test1test2', groups: undefined ]
+
+// console.log(array[4]);
+// // Output : undefined
+
+
+
+// 14. normalize()
+
+// It returns the Unicode Normalization form of the string.
+
+// Syntax : normalize()
+// Syntax : normalize(form)
+
+
+// Code :- 
+
+// const strOne = '\u9733';
+// const strSecond = "\u0065"
+
+// console.log(strOne.normalize('NFC'))
+// console.log(strSecond.normalize('NFC'))
+
+// console.log(strSecond.normalize())
+// // By observing Output we can say if .normalize() methods parameter is undefined  it uses 'NFC' 
+// console.log(strOne.normalize('NFD'))
+
+
+
+// 15. 
