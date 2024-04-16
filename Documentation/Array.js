@@ -207,3 +207,219 @@
 // Output : [ 'c', 'd', 'e', 'd', 'e' ]
 
 
+
+
+
+
+// 5. entries()
+
+// The entries() method of Array instances returns a new array iterator object that contains the key/value pairs for each index in the array.
+
+// Syntax : entries()
+
+// It returns A new iterable iterator object.
+
+// When used on sparse arrays, the entries() method iterates empty slots as if they have the value undefined.
+
+// The entries() method is generic. It only expects the this value to have a length property and integer-keyed properties.
+
+// Code :-
+
+// const Array = [ 1, 2, 3, 4]
+// const ArrayEntries = Array.entries()
+
+// for (const i of ArrayEntries) {
+//     console.log(i)
+// }
+// //    Output : [ 0, 1 ]
+// //             [ 1, 2 ]
+// //             [ 2, 3 ]
+// //             [ 3, 4 ]
+
+// for (const [index, element] of Array.entries()) {
+//     console.log(index, element);
+//   }
+
+// // Output : 0 1
+// //          1 2
+// //          2 3
+// //          3 4
+
+// for (const element of [, "a"].entries()) {
+//     console.log(element);
+// }
+// // Output : [ 0, undefined ]
+// //          [ 1, 'a' ]
+
+
+
+
+
+// 6. every()
+
+// The every() method of Array instances tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+// Syntax : every(callbackFn)
+// Syntax : every(callbackFn, thisArg)
+
+// It returns true unless callbackFn returns a falsy value for an array element, in which case false is immediately returned.
+
+// callbackFn :-
+
+// A function to execute for each element in the array. It should return a truthy value to indicate the element passes the test, and a falsy value otherwise. The function is called with the following arguments:
+
+//  element
+// The current element being processed in the array.
+
+// index
+// The index of the current element being processed in the array.
+
+// array
+// The array every() was called upon.
+
+// const isBelowThreshold = (currentValue) => currentValue < 40;
+
+// const array1 = [1, 30, 39, 29, 10, 13];
+
+// console.log(array1.every(isBelowThreshold));
+// // Output : true
+
+// const array2 = [1, 30, 39, 29, 10, 13 ,40];
+// console.log(array2.every(isBelowThreshold));
+// // Output : false
+
+// const array3 = [];
+// console.log(array3.every(isBelowThreshold));
+// // Output : true
+
+// const array4 = ["10", "20", "50"];
+// console.log(array4.every(isBelowThreshold));
+// // Output : false
+
+// const array5 = ["10", "20"];
+// console.log(array5.every(isBelowThreshold));
+// // Output : true
+
+
+
+
+
+// 7. fill()
+
+// The fill() method of Array instances changes all elements within a range of indices in an array to a static value. It returns the modified array.
+
+// Syntax : fill(value)
+// Syntax : fill(value, start)
+// Syntax : fill(value, start, end)
+
+// It returns The modified array, filled with value.
+
+// start :-
+
+// Zero-based index at which to start filling, converted to an integer.
+
+// Negative index counts back from the end of the array — if -array.length <= start < 0, start + array.length is used.
+// If start < -array.length or start is omitted, 0 is used.
+// If start >= array.length, no index is filled.
+
+
+//  end :-
+// Zero-based index at which to end filling, converted to an integer. fill() fills up to but not including end.
+
+// Negative index counts back from the end of the array — if -array.length <= end < 0, end + array.length is used.
+// If end < -array.length, 0 is used.
+// If end >= array.length or end is omitted, array.length is used, causing all indices until the end to be filled.
+// If end implies a position before or at the position that start implies, nothing is filled.
+
+// value :-
+
+// Value to fill the array with. Note all elements in the array will be this exact value: if value is an object, each slot in the array will reference that object.
+
+// Note :- 
+// The fill() method is a mutating method. It does not alter the length of this, but it will change the content of this.
+
+// The fill() method fills empty slots in sparse arrays with value as well.
+
+// The fill() method is generic. It only expects the this value to have a length property. Although strings are also array-like, this method is not suitable to be applied on them, as strings are immutable.
+
+// Code :- 
+
+// const array1 = [1, 2, 3, 4];
+
+// console.log(array1);
+// console.log(array1.fill(0));
+// // Output : [0, 0, 0, 0]
+
+// console.log(array1.fill(2, 2));
+// // // Expected output: Array [0, 0, 2, 2]
+
+// // array1 = [1, 2, 3, 4]
+// console.log(array1.fill(2, -2));
+// // output : [ 1, 2, 2, 2 ]
+
+// console.log(array1.fill());
+// // output: [ undefined, undefined, undefined, undefined ]
+
+// console.log(array1.fill(6,8));
+// //output: [ 1, 2, 3, 4 ]
+
+// console.log(array1.fill(6,2,2));
+// // //output: [ 1, 2, 3, 4 ]
+
+// console.log(array1.fill(6,1,2));
+// //output: [ 1, 6, 3, 4 ]
+// Here end index is act as index end-1
+
+// console.log(array1.fill(6,2,9));
+// //output: [ 1, 2, 6, 6 ]
+
+
+
+// 8. filter()
+
+// The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+
+// Syntax : filter(callbackFn)
+// Syntax : filter(callbackFn, thisArg)
+
+// It returns A shallow copy of the given array containing just the elements that pass the test. If no elements pass the test, an empty array is returned.
+
+// Code :- 
+
+// const Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const  filterdByMe = (num) => num > 5; 
+
+// let filteredArray = Array.filter(filterdByMe);
+
+// console.log(filteredArray);
+// // Output : [ 6, 7, 8, 9, 10 ]
+
+
+
+
+// 9. find()
+
+// The find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+// Syntax : find(callbackFn)
+// Syntax : find(callbackFn, thisArg)
+
+// It returns The first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.
+
+// Code :-
+
+// const Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const  filterdByMe = (num) => num > 5;
+
+// console.log(Array.find(filterdByMe));
+// Output : 6
+
+// console.log(Array.find());
+// // Output : TypeError: undefined is not a function
+
+// console.log(Array.find(filterdByMe,4));
+// Output : 6
+
+
+
