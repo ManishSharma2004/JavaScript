@@ -423,3 +423,133 @@
 
 
 
+// 10. findIndex()
+
+// The findIndex() method of Array instances returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.
+
+
+// Syntax : findIndex(callbackFn)
+// Syntax : findIndex(callbackFn, thisArg)
+
+// It returns The index of the first element in the array that passes the test. Otherwise, -1.
+
+// Code :-
+
+// const Array = [ 1, 2, 3, 4, 5]
+
+// const functionGt3  = (n) => n>3
+
+// console.log(Array.findIndex(functionGt3));
+// // Output : 3
+
+// console.log(Array.findIndex());
+// Output : TypeError: undefined is not a function
+
+// const functionGt5  = (n) => n>5
+// console.log(Array.findIndex(functionGt5));
+// Output : -1
+
+//  const ArrayChr = [ 'a','b','c']
+// const functionGta  = (n) => n>'a'
+// console.log(ArrayChr.findIndex(functionGta));
+// Output : 1
+
+
+
+
+// 11. findLast()
+
+// The findLast() method of Array instances iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function. If no elements satisfy the testing function, undefined is returned.
+
+// Syntax : findLast(callbackFn)
+// Syntax : findLast(callbackFn, thisArg)
+
+// It returns The last (highest-index) element in the array that satisfies the provided testing function; undefined if no matching element is found.
+
+// Code :-
+
+// const arr = [ 1, 2, 3, 4, 8]
+// const functionGt3  = (n) => n>'3'
+
+// console.log(arr.findLast(functionGt3));
+// // Output : 8
+
+
+//  const ArrayChr = [ 'a','b','c']
+// const functionGta  = (n) => n>'a'
+
+// console.log(ArrayChr.findLast(functionGta));
+// // Output : c
+
+
+
+// 12. findLastIndex()
+
+// The findLastIndex() method of Array instances iterates the array in reverse order and returns the index of the first element that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.
+
+// Syntax : findLastIndex(callbackFn)
+// Syntax : findLastIndex(callbackFn, thisArg)
+
+// It returns The index of the last (highest-index) element in the array that passes the test. Otherwise -1 if no matching element is found.
+
+// const array1 = [5, 12, 50, 130, 44];
+
+// const isLargeNumber = (element) => element > 45;
+
+// console.log(array1.findLastIndex(isLargeNumber));
+// Output : 3 // That means 130
+
+
+
+// 13. flat()
+
+// The flat() method of Array instances creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+// Syntax : flat()
+// Syntax : flat(depth)
+
+// Depth :
+//      The depth level specifying how deep a nested array structure should be flattened. Defaults to 1.
+
+// It returns A new array with the sub-array elements concatenated into it.
+
+// Code :- 
+
+// const arr = [1,[2,[3,[4,[5,6]]]]]
+
+// console.log(arr.flat())
+// // Output :  [ 1, 2, [ 3, [ 4, [Array] ] ] ] // not displaying after 4th depth
+
+// console.log(arr.flat(2));
+// // Output : [ 1, 2, 3, [ 4, [ 5, 6 ] ] ]
+
+// console.log(arr.flat(6));
+// // Output : [ 1, 2, 3, 4, 5, 6 ]
+
+
+// const arr1 = [1,[2,[3,[4,[5,6],7],8]]]
+
+// console.log(arr1.flat(3));
+// // Output : [ 1, 2, 3, 4, [ 5, 6 ], 7, 8 ]
+
+
+
+// 14. flatMap()
+
+// The flatMap() method of Array instances returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a map() followed by a flat() of depth 1 (arr.map(...args).flat()), but slightly more efficient than calling those two methods separately.
+
+// Output : flatMap(callbackFn)
+// Output : flatMap(callbackFn, thisArg)
+
+// It returns A new array with each element being the result of the callback function and flattened by a depth of 1.
+
+// Code :-
+
+// const arr1 = [1, 2, 1];
+
+// const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
+
+// console.log(result);
+
+
+
