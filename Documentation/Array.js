@@ -553,3 +553,192 @@
 
 
 
+
+// 15. foreach()
+
+// The forEach() method of Array instances executes a provided function once for each array element.
+
+// Syntax : forEach(callbackFn)
+// Syntax : forEach(callbackFn, thisArg)
+
+// It returns None (undefined).
+
+// // Code :-
+
+// const Array = [1, 2, 3, 4, 5, 6]
+
+// Array.forEach((element) => console.log(element));
+
+
+
+// 16. from()
+
+// The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+
+// Syntax : Array.from(arrayLike)
+// Syntax : Array.from(arrayLike, mapFn)
+// Syntax : Array.from(arrayLike, mapFn, thisArg)
+
+// arrayLike :-
+// An iterable or array-like object to convert to an array.
+
+// mapFn :-
+// A function to call on every element of the array. If provided, every value to be added to the array is first passed through this function, and mapFn's return value is added to the array instead. The function is called with the following arguments:
+
+    // element
+    // The current element being processed in the array.
+
+    // index
+    // The index of the current element being processed in the array.
+
+// thisArg :-
+// Value to use as this when executing mapFn.
+
+// It returns A new Array instance.
+
+// Code :-
+
+// console.log(Array.from("Manish"));
+// Output : [ 'M', 'a', 'n', 'i', 's', 'h' ]
+
+// console.log(Array.from(1020));
+// Output : []
+
+// console.log(Array.from());
+// Output : TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+
+// console.log(Array.from("Man - ish sh   arma"));
+// Output : [
+//   'M', 'a', 'n', ' ', '-',
+//   ' ', 'i', 's', 'h', ' ',
+//   's', 'h', ' ', ' ', ' ',
+//   'a', 'r', 'm', 'a'
+// ]
+
+
+
+// 17. formAsync()
+
+// The Array.fromAsync() static method creates a new, shallow-copied Array instance from an async iterable, iterable, or array-like object.
+
+// Syntax : Array.fromAsync(arrayLike)
+// Syntax : Array.fromAsync(arrayLike, mapFn)
+// Syntax : Array.fromAsync(arrayLike, mapFn, thisArg)
+
+// It returns A new Promise whose fulfillment value is a new Array instance.
+
+// Code :- 
+
+
+
+// 18. includes()
+
+// The includes() method of Array instances determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+
+
+// Syntax : includes(searchElement)
+// Syntax : includes(searchElement, fromIndex)
+
+// It returns A boolean value which is true if the value searchElement is found within the array (or the part of the array indicated by the index fromIndex, if specified).
+
+// Code :-
+
+// const Array = [1, 2, 3, 4, 5, 6, 7]
+
+// console.log(Array.includes(4))
+// // Output : true
+// console.log(Array.includes(0))
+// // Output : false
+// console.log(Array.includes())
+// // Output : false
+// console.log(Array.includes('a'))
+// // Output : false
+// console.log(Array.includes(4,3))
+// // Output : true
+
+
+
+// 19. indexOf()
+
+// The indexOf() method of Array instances returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
+// Syntax : indexOf(searchElement)
+// Syntax : indexOf(searchElement, fromIndex)
+
+// It returns The first index of searchElement in the array; -1 if not found.
+
+// fromIndex :- 
+// Zero-based index at which to start searching, converted to an integer.
+
+// Negative index counts back from the end of the array — if -array.length <= fromIndex < 0, fromIndex + array.length is used. Note, the array is still searched from front to back in this case.
+// If fromIndex < -array.length or fromIndex is omitted, 0 is used, causing the entire array to be searched.
+// If fromIndex >= array.length, the array is not searched and -1 is returned.
+// Code :-
+
+// const Array = [1, 2, 3, 4, 5, 6]
+// console.log(Array.indexOf(3))
+// // Output : 2
+// console.log(Array.indexOf(5,2))
+// // Output : 4
+// console.log(Array.indexOf(3,0))
+// // Output : 2
+// console.log(Array.indexOf())
+// // Output : -1
+// console.log(Array.indexOf(3,4))
+// // Output : -1
+// console.log(Array.indexOf(4,9))
+// // Output : -1
+// console.log(Array.indexOf('a'))
+// // Output : -1
+
+
+
+
+// 20. isArray()
+
+// The Array.isArray() static method determines whether the passed value is an Array.
+
+// Syntax : Array.isArray(value)
+
+// It returns true if value is an Array; otherwise, false. false is always returned if value is a TypedArray instance.
+
+// Code:-
+
+// const arr = [1,2,3,4,5,6,7,8,9]
+
+// console.log(Array.isArray(arr));
+// // Output : true
+// console.log(Array.isArray([1, 3, 5]));
+// // Output : true
+// console.log(Array.isArray('[]'));
+// // Output : false
+// console.log(Array.isArray(new Array(5)));
+// // Output : true
+// console.log(Array.isArray(new Int16Array([15, 33])));
+// // Output : false
+
+
+
+
+// 21. join()
+
+// The join() method of Array instances creates and returns a new string by concatenating all of the elements in this array, separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+
+// Syntax : join()
+// Syntax : join(separator)
+
+// It returns A string with all array elements joined. If array.length is 0, the empty string is returned.
+
+// const elements = ['Fire', 'Air', 'Water'];
+
+// console.log(elements.join());
+// // Expected output: "Fire,Air,Water"
+
+// console.log(elements.join(''));
+// // Expected output: "FireAirWater"
+
+// console.log(elements.join('-'));
+// // Expected output: "Fire-Air-Water"
+
+// console.log(elements.join('/'))
+// Output : Fire/Air/Water
