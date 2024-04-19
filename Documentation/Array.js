@@ -742,3 +742,169 @@
 
 // console.log(elements.join('/'))
 // Output : Fire/Air/Water
+
+
+
+// 22. keys()
+
+// The keys() method of Array instances returns a new array iterator object that contains the keys for each index in the array.
+
+// Syntax : keys()
+
+// It returns A new iterable iterator object.
+
+// Code :-
+
+// const array1 = ['a', 'b', 'c'];
+// const iterator = array1.keys();
+
+// for (const key of iterator) {
+//   console.log(key);
+// }
+// // Output :  0  1  2
+
+
+
+
+// 23. lastIndexOf()
+
+// The lastIndexOf() method of Array instances returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
+
+// Syntax : lastIndexOf(searchElement)
+// Syntax : lastIndexOf(searchElement, fromIndex)
+
+// It returns The last index of searchElement in the array; -1 if not found.
+
+// fromIndex :- 
+
+// Zero-based index at which to start searching backwards, converted to an integer.
+
+// Negative index counts back from the end of the array — if -array.length <= fromIndex < 0, fromIndex + array.length is used.
+
+// If fromIndex < -array.length, the array is not searched and -1 is returned. You can think of it conceptually as starting at a nonexistent position before the beginning of the array and going backwards from there. There are no array elements on the way, so searchElement is never found.
+
+// If fromIndex >= array.length or fromIndex is omitted, array.length - 1 is used, causing the entire array to be searched. You can think of it conceptually as starting at a nonexistent position beyond the end of the array and going backwards from there. It eventually reaches the real end position of the array, at which point it starts searching backwards through the actual array elements.
+
+
+// Code :- 
+
+// const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+
+// console.log(animals.lastIndexOf('Dodo'));
+// // Output : 3
+
+// console.log(animals.lastIndexOf('Tiger'));
+// // Output : 1
+
+
+
+
+// 24. map()
+
+// The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+// Syntax : map(callbackFn)
+// Syntax : map(callbackFn, thisArg)
+
+// It returns A new array with each element being the result of the callback function.
+
+// Code :-
+
+// const array1 = [1, 4, 9, 16];
+
+// // Pass a function to map
+// const map1 = array1.map((x) => x * 2);
+// console.log(map1);
+// // Output : [2, 8, 18, 32]
+
+// const map2 = array1.map((x) => x / 5);
+// console.log(map2);
+// // Output : [ 0.2, 0.8, 1.8, 3.2 ]
+
+
+
+// 25. of()
+
+// The Array.of() static method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
+
+// Syntax : Array.of()
+// Syntax : Array.of(element1)
+// Syntax : Array.of(element1, element2)
+// Syntax : Array.of(element1, element2, /* …, */ elementN)
+
+// It returns A new Array instance.
+
+// Code :-
+
+// console.log(Array.of('foo', 2, 'bar', true));
+// Output : ["foo", 2, "bar", true]
+
+// console.log(Array.of());
+// Output : []
+
+// console.log(Array.of("M","A","N","I","S","H"));
+// Output : [ 'M', 'A', 'N', 'I', 'S', 'H' ]
+
+// console.log(Array.of(" ", "0", "1", "A"));
+// Output : [ ' ', '0', '1', 'A' ]
+
+
+
+// 26. pop()
+
+// The pop() method of Array instances removes the last element from an array and returns that element. This method changes the length of the array.
+
+// Syntax : pop()
+
+// It returns The removed element from the array; undefined if the array is empty.
+
+// Code :-
+
+// const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+// console.log(plants.pop());
+// // Output: "tomato"
+
+// console.log(plants);
+// // Output: ["broccoli", "cauliflower", "cabbage", "kale"]
+
+// plants.pop();
+
+// console.log(plants);
+// // Output : [ 'broccoli', 'cauliflower', 'cabbage' ]
+
+
+
+
+
+// 27. push()
+
+// The push() method of Array instances adds the specified elements to the end of an array and returns the new length of the array.
+
+// Syntax : push()
+// Syntax : push(element1)
+// Syntax : push(element1, element2)
+// Syntax : push(element1, element2, /* …, */ elementN)
+
+// It returns The new length property of the object upon which the method was called.
+
+// Code :- 
+
+// const animals = ['pigs', 'goats', 'sheep'];
+
+// const count = animals.push('cows');
+
+// console.log(count);
+// // Output : 4
+
+// console.log(animals);
+// // Output : Array ["pigs", "goats", "sheep", "cows"]
+
+// animals.push('chickens', 'cats', 'dogs');
+
+// console.log(animals);
+// // Output : [ 'pigs','goats','sheep','cows','chickens', 'cats','dogs' ]
+
+// animals.push(" ")
+// console.log(animals)
+// // // Output : [ 'pigs','goats','sheep','cows','chickens', 'cats','dogs', ' ' ]
