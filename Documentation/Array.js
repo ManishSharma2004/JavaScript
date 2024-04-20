@@ -988,3 +988,32 @@
 // console.log(months);
 // // Output : [ 'Jan', 'Feb', 'March', 'April', 'May' ]
 
+
+
+
+
+
+
+// 36. toLocaleString()
+
+// The toLocaleString() method of Array instances returns a string representing the elements of the array. The elements are converted to strings using their toLocaleString methods and these strings are separated by a locale-specific string (such as a comma ",").
+
+// Syntax : toLocaleString()
+// Syntax : toLocaleString(locales)
+// Syntax : toLocaleString(locales, options)
+
+// Locales :- 
+// A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the parameter description on the Intl main page.
+
+// Options :-
+// An object with configuration properties. For numbers, see Number.prototype.toLocaleString(); for dates, see Date.prototype.toLocaleString().
+
+// It returns A string representing the elements of the array.
+
+// Code :- 
+
+// const array1 = [1, 'a', new Date('21 Dec 1997 14:12:00 UTC')];
+// const localeString = array1.toLocaleString('en', { timeZone: 'UTC' });
+
+// console.log(localeString);
+// Output : 1,a,12/21/1997, 2:12:00 PM
