@@ -942,3 +942,49 @@
 // console.log(sumWithInitial);
 // Output : 10
 
+
+
+
+
+
+// 35. splice()
+
+// The splice() method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+
+// To create a new array with a segment removed and/or replaced without mutating the original array, use toSpliced(). To access part of an array without modifying it, see slice().
+
+// Syntax : splice(start)// Syntax : 
+// Syntax : splice(start, deleteCount)
+// Syntax : splice(start, deleteCount, item1)
+// Syntax : splice(start, deleteCount, item1, item2)
+// Syntax : splice(start, deleteCount, item1, item2, /* …, */ itemN)
+
+
+// start :-
+
+// Zero-based index at which to start changing the array, converted to an integer.
+// Negative index counts back from the end of the array — if -array.length <= start < 0, start + array.length is used.
+// If start < -array.length, 0 is used.
+// If start >= array.length, no element will be deleted, but the method will behave as an adding function, adding as many elements as provided.
+// If start is omitted (and splice() is called with no arguments), nothing is deleted. This is different from passing undefined, which is converted to 0.
+
+// deleteCount :-
+
+// An integer indicating the number of elements in the array to remove from start.
+// If deleteCount is omitted, or if its value is greater than or equal to the number of elements after the position specified by start, then all the elements from start to the end of the array will be deleted. However, if you wish to pass any itemN parameter, you should pass Infinity as deleteCount to delete all elements after start, because an explicit undefined gets converted to 0.
+// If deleteCount is 0 or negative, no elements are removed. In this case, you should specify at least one new element (see below).
+
+// it returns An array containing the deleted elements. If only one element is removed, an array of one element is returned. If no elements are removed, an empty array is returned.
+
+// Code :-
+
+// const months = ['Jan', 'March', 'April', 'June'];
+
+// months.splice(1, 0, 'Feb');
+// console.log(months);
+// // Output : ["Jan", "Feb", "March", "April", "June"]
+
+// months.splice(4, 1, 'May');
+// console.log(months);
+// // Output : [ 'Jan', 'Feb', 'March', 'April', 'May' ]
+
