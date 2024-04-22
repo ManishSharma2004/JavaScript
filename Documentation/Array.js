@@ -1,6 +1,6 @@
 // 
 
-// ----------------------------Array------------------------------ // 
+// ----------------------------Array------------------------------
 
 // The Array object, as with arrays in other programming languages, enables storing a collection of multiple items under a single variable name, and has members for performing common array operations
 
@@ -913,7 +913,6 @@
 
 
 
-
 // 28. reduce()
 
 // The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
@@ -944,6 +943,186 @@
 // console.log(sumWithInitial);
 // Output : 10
 
+
+
+// 29. reduceRight()
+
+// The reduceRight() method of Array instances applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
+
+// Syntax : reduceRight(callbackFn)
+// Syntax : reduceRight(callbackFn, initialValue)
+
+// It returns The value that results from the reduction.
+
+// Code :- 
+
+// const array1 = [
+//     [0, 1],
+//     [2, 3],
+//     [4, 5],
+//   ];
+  
+//   const result = array1.reduceRight((accumulator, currentValue) =>
+//     accumulator.concat(currentValue),
+//   );
+  
+//   console.log(result);
+  // Output : [ 4, 5, 2, 3, 0, 1 ]
+
+
+
+
+// 30. reverse()
+
+// The reverse() method of Array instances reverses an array in place and returns the reference to the same array, the first array element now becoming the last, and the last array element becoming the first. In other words, elements order in the array will be turned towards the direction opposite to that previously stated.
+
+// To reverse the elements in an array without mutating the original array, use toReversed().
+
+// Syntax : reverse()
+
+// It returns The reference to the original array, now reversed. Note that the array is reversed in place, and no copy is made.
+
+// Code :-
+
+// const array1 = ['one', 'two', 'three'];
+
+// console.log('array1:', array1);
+// // Output : array1 : Array ["one", "two", "three"]
+
+// const reversed = array1.reverse();
+// console.log('reversed:', reversed);
+// // Output : reversed : Array ["three", "two", "one"]
+
+// console.log('array1:', array1);
+// // Output : array1: [ 'three', 'two', 'one' ]
+
+
+
+
+// 31. shift()
+
+// The shift() method of Array instances removes the first element from an array and returns that removed element. This method changes the length of the array.
+
+// Syntax : shift()
+
+// It returns The removed element from the array; undefined if the array is empty.
+
+// Code :-
+
+// const array1 = [1, 2, 3];
+
+// const firstElement = array1.shift();
+
+// console.log(array1);
+// // Output : [2, 3]
+
+// console.log(firstElement);
+// // Output : 1
+
+
+
+
+// 32. slice()
+
+// The slice() method of Array instances returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
+
+// Syntax : slice()
+// Syntax : slice(start)
+// Syntax : slice(start, end)
+
+// It returns A new array containing the extracted elements.
+
+// // start:- 
+// Zero-based index at which to start extraction, converted to an integer.
+
+// Negative index counts back from the end of the array — if -array.length <= start < 0, start + array.length is used.
+// If start < -array.length or start is omitted, 0 is used.
+// If start >= array.length, nothing is extracted.
+
+// // end :-
+// Zero-based index at which to end extraction, converted to an integer. slice() extracts up to but not including end.
+
+// Negative index counts back from the end of the array — if -array.length <= end < 0, end + array.length is used.
+// If end < -array.length, 0 is used.
+// If end >= array.length or end is omitted, array.length is used, causing all elements until the end to be extracted.
+// If end implies a position before or at the position that start implies, nothing is extracted.
+
+// Code :-
+
+// const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+// console.log(animals.slice(2));
+// // Output : ["camel", "duck", "elephant"]
+
+// console.log(animals.slice(2, 4));
+// // Output : ["camel", "duck"]
+
+// console.log(animals.slice(1, 5));
+// // Output : ["bison", "camel", "duck", "elephant"]
+
+// console.log(animals.slice(-2));
+// // Output : ["duck", "elephant"]
+
+// console.log(animals.slice(2, -1));
+// // Output : ["camel", "duck"]
+
+// console.log(animals.slice());
+// // Output : ["ant", "bison", "camel", "duck", "elephant"]
+
+
+
+
+// 33. some()
+
+// The some() method of Array instances tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+// Syntax : some(callbackFn)
+// Syntax : some(callbackFn, thisArg)
+
+// It returns false unless callbackFn returns a truthy value for an array element, in which case true is immediately returned.
+
+// Code :-
+
+// const array = [1, 2, 3, 4, 5];
+
+// // Checks whether an element is even
+// const even = (element) => element % 2 === 0;
+
+// console.log(array.some(even));
+// // Output : true
+
+// const odd = (n) => n % 2 != 0;
+
+// console.log(array.some(odd));
+// // Output : true 
+
+
+
+
+// 34. sort()
+
+// The sort() method of Array instances sorts the elements of an array in place and returns the reference to the same array, now sorted. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+// The time and space complexity of the sort cannot be guaranteed as it depends on the implementation.
+
+//  Syntax : sort()
+// Syntax : sort(compareFn)
+
+// It returns The reference to the original array, now sorted. Note that the array is sorted in place, and no copy is made.
+
+// Code :-
+
+// const months = ['March', 'Jan', 'Feb', 'Dec'];
+
+// months.sort();
+// console.log(months);
+// // Output:  ["Dec", "Feb", "Jan", "March"]
+
+// const array1 = [1, 30, 4, 21, 100000];
+
+// array1.sort();
+// console.log(array1);
+// // Output : [1, 100000, 21, 30, 4]
 
 
 
@@ -994,8 +1173,6 @@
 
 
 
-
-
 // 36. toLocaleString()
 
 // The toLocaleString() method of Array instances returns a string representing the elements of the array. The elements are converted to strings using their toLocaleString methods and these strings are separated by a locale-specific string (such as a comma ",").
@@ -1019,3 +1196,5 @@
 
 // console.log(localeString);
 // Output : 1,a,12/21/1997, 2:12:00 PM
+
+//
