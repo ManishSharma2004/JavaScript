@@ -1,0 +1,95 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+#include <iomanip>
+using namespace std;
+
+// Function to print optimal parenthesization using s table
+void printOptimalParens(const vector<vector<int>>& s, int i, int j) {
+    if (i == j) {
+        cout << "A" << i;
+    } else {
+        cout << "(";
+        printOptimalParens(s, i, s[i][j]);
+        printOptimalParens(s, s[i][j] + 1, j);
+        cout << ")";
+    }
+}
+
+void matrixChainOrder(const vector<int>& p) {
+    int n = p.size() - 1; // Number of matrices
+    if (n < 1) {
+        cout << "Error: At least one matrix is required.\n";
+        return;
+    }
+
+    // Use long long for m to avoid overflow
+    vector<vector<long long>> m(n, vector<long long>(n, 0));
+    vector<vector<int>> s(n, vector<int>(n, 0));
+
+    // Initialize diagonal (single matrix multiplication cost is 0)
+    for (int i = 0; i < n; i++) {
+        m[i][i] = 0;
+    }
+
+    // l is the chain length
+    for (int l = 2; l <= n; l++) {
+        for (int i = 0; i < n - l + 1; i++) {
+            int j = i + l - 1;
+            m[i][j] = LLONG_MAX; // Use long long max
+            for (int k = i; k < j; k++) {
+                long long q = m[i][k] + m[k + 1][j] + (long long)p[i] * p[k + 1] * p[j + 1];
+                if (q < m[i][j]) {
+                    m[i][j] = q;
+                    s[i][j] = k;
+                }
+            }
+        }
+    }
+
+    // Print cost table
+    cout << "\nCost Table (m):\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i > j)
+                cout << setw(10) << "-";
+            else
+                cout << setw(10) << m[i][j];
+        }
+        cout << "\n";
+    }
+
+    // Print s table
+    cout << "\nSplit Table (s):\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i >= j)
+                cout << setw(10) << "-";
+            else
+                cout << setw(10) << s[i][j];
+        }
+        cout << "\n";
+    }
+
+    cout << "\nOptimal Parenthesization: ";
+    printOptimalParens(s, 0, n - 1);
+    cout << "\nMinimum number of multiplications: " << m[0][n - 1] << endl;
+}
+
+int main() {
+    vector<int> p = {30, 35, 15, 5, 10, 20, 25}; // Example dimensions
+    // Input validation
+    if (p.size() < 2) {
+        cout << "Error: At least two dimensions are required.\n";
+        return 1;
+    }
+    for (int dim : p) {
+        if (dim <= 0) {
+            cout << "Error: Matrix dimensions must be positive.\n";
+            return 1;
+        }
+    }
+
+    matrixChainOrder(p);
+    return 0;
+}
